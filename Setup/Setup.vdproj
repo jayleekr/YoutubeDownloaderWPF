@@ -15,25 +15,19 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_4F5687BC64F547C7A653910925980C9E"
+        "MsmKey" = "8:_0466D9F2051C48888D3AEDCB1C5D005A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_62536376CBAD4F5781EA8766E7CC90CE"
+        "MsmKey" = "8:_6A5E568E024244FAA883D226900A4A1D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_AB0BDDCCCD6B47FCA0E86F1A977DF037"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_F8ADE70ABB8F4A0FBB6DE3C9FB334560"
+        "MsmKey" = "8:_B72B66B90836444081541BA5EAD9DEAC"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -68,6 +62,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
         "Release"
@@ -94,10 +96,10 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5.2"
                     {
-                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    "Name" = "8:Microsoft .NET Framework 4.5.2(x86 및 x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5.2"
                     }
                 }
             }
@@ -122,7 +124,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.0"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.0,Profile=Client"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=671728"
                 }
@@ -130,49 +132,9 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4F5687BC64F547C7A653910925980C9E"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0466D9F2051C48888D3AEDCB1C5D005A"
             {
-            "SourcePath" = "8:..\\Youtube-dlWPF\\favicon.ico"
-            "TargetName" = "8:favicon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_89E2D6DB7E344B77A78726DD3A4563DA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_62536376CBAD4F5781EA8766E7CC90CE"
-            {
-            "SourcePath" = "8:..\\Youtube-dlWPF\\youtube-dl.exe"
-            "TargetName" = "8:youtube-dl.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_89E2D6DB7E344B77A78726DD3A4563DA"
-            "Condition" = "8:"
-            "Transitive" = "11:TRUE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AB0BDDCCCD6B47FCA0E86F1A977DF037"
-            {
-            "SourcePath" = "8:..\\Youtube-dlWPF\\ffprobe.exe"
+            "SourcePath" = "8:..\\J-YoutubeDownloader\\ffprobe.exe"
             "TargetName" = "8:ffprobe.exe"
             "Tag" = "8:"
             "Folder" = "8:_89E2D6DB7E344B77A78726DD3A4563DA"
@@ -190,9 +152,29 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F8ADE70ABB8F4A0FBB6DE3C9FB334560"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6A5E568E024244FAA883D226900A4A1D"
             {
-            "SourcePath" = "8:..\\Youtube-dlWPF\\ffmpeg.exe"
+            "SourcePath" = "8:..\\J-YoutubeDownloader\\favicon.ico"
+            "TargetName" = "8:favicon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_89E2D6DB7E344B77A78726DD3A4563DA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B72B66B90836444081541BA5EAD9DEAC"
+            {
+            "SourcePath" = "8:..\\J-YoutubeDownloader\\ffmpeg.exe"
             "TargetName" = "8:ffmpeg.exe"
             "Tag" = "8:"
             "Folder" = "8:_89E2D6DB7E344B77A78726DD3A4563DA"
@@ -250,7 +232,7 @@
                 {
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_826D780323C94497A2088D77894ED43B"
                     {
-                    "Name" = "8:Youtube-DL"
+                    "Name" = "8:J-YoutubeDownloader"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
@@ -276,26 +258,26 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:유튜브 다운로더"
-        "ProductCode" = "8:{1E435556-0F0A-4324-BC74-4DBF0648C634}"
-        "PackageCode" = "8:{C280E07C-C53B-4737-B88D-93CD36BBD0C5}"
+        "ProductName" = "8:J-YoutubeDownloader"
+        "ProductCode" = "8:{08A2300D-FAB8-4B8B-9A1D-09C7D8FB9591}"
+        "PackageCode" = "8:{EB2AA91C-1794-4FCC-8B6A-2281DA423D98}"
         "UpgradeCode" = "8:{AD0462E1-FF05-48BD-90A2-67C56522D60C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:18.10.25"
+        "ProductVersion" = "8:1.0.1904"
         "Manufacturer" = "8:Jay Lee"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:Simple Youtube Downloader For Windows"
+        "Title" = "8:J-YoutubeDownloader"
         "Subject" = "8:"
         "ARPCONTACT" = "8:Jay Lee"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:Simple Youtube Downloader For Windows"
-        "ARPURLINFOABOUT" = "8:https://github.com/Jay-Lee-the-Montser"
-        "ARPPRODUCTICON" = "8:_4F5687BC64F547C7A653910925980C9E"
+        "ARPURLINFOABOUT" = "8:https://github.com/jayleekr"
+        "ARPPRODUCTICON" = "8:_6A5E568E024244FAA883D226900A4A1D"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -400,7 +382,7 @@
         {
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_3031DF2E6F064770AF7071E07FB428E2"
             {
-            "Name" = "8:Youtube-DL"
+            "Name" = "8:J-YoutubeDownloader"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -409,12 +391,12 @@
             "Target" = "8:_461CD985964C4EDAB754F5EEF809483A"
             "Folder" = "8:_826D780323C94497A2088D77894ED43B"
             "WorkingFolder" = "8:_89E2D6DB7E344B77A78726DD3A4563DA"
-            "Icon" = "8:_4F5687BC64F547C7A653910925980C9E"
+            "Icon" = "8:_6A5E568E024244FAA883D226900A4A1D"
             "Feature" = "8:"
             }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D0713F806FF0474EB1DD0E63F737CB95"
             {
-            "Name" = "8:Youtube-DL"
+            "Name" = "8:J-YoutubeDownloader"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
@@ -423,7 +405,7 @@
             "Target" = "8:_461CD985964C4EDAB754F5EEF809483A"
             "Folder" = "8:_7D7AC4CF96DC4037AFC011D4ECA8EF65"
             "WorkingFolder" = "8:_89E2D6DB7E344B77A78726DD3A4563DA"
-            "Icon" = "8:_4F5687BC64F547C7A653910925980C9E"
+            "Icon" = "8:_6A5E568E024244FAA883D226900A4A1D"
             "Feature" = "8:"
             }
         }
@@ -827,7 +809,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_461CD985964C4EDAB754F5EEF809483A"
             {
-            "SourcePath" = "8:..\\Youtube-dlWPF\\obj\\Release\\Youtube-dlWPF.exe"
+            "SourcePath" = "8:..\\J-YoutubeDownloader\\obj\\Release\\J-YoutubeDownloader.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_89E2D6DB7E344B77A78726DD3A4563DA"
