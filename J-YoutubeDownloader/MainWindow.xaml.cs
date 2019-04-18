@@ -19,6 +19,7 @@ using Microsoft.Win32;
 using Microsoft.WindowsAPICodePack.Dialogs;
 using System.Windows.Threading;
 using J_YoutubeDownloader.Control;
+using J_YoutubeDownloader.Database;
 
 namespace J_YoutubeDownloader
 {
@@ -34,7 +35,6 @@ namespace J_YoutubeDownloader
         public static double ProgressValue = 0;
 
         private static YoutubeInfo YoutubeInfo;
-        private string SavePath;
         private string Version;
         private string SelectedExtension;
         private int SelectedQualityNumber;
@@ -45,6 +45,7 @@ namespace J_YoutubeDownloader
 
         private RadioButton SelectedVideoExtensionRadioButton;
         private RadioButton SelectedAudioExtensionRadioButton;
+        private SetupDB Setup;
 
         public MainWindow()
         {
@@ -53,9 +54,11 @@ namespace J_YoutubeDownloader
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            Setup = new SetupDB();
+
             VideoRadio.IsChecked = IsVideo;
-            PathTextBox.Text = Environment.CurrentDirectory;
-            SavePath = PathTextBox.Text;
+
+            PathTextBox.Text = Setup.SavePath;
 
             SetVersion();
 
@@ -143,11 +146,13 @@ namespace J_YoutubeDownloader
         private void ChangeButton_Click(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.FolderBrowserDialog dialog = new System.Windows.Forms.FolderBrowserDialog();
-            dialog.SelectedPath = SavePath;
+            dialog.SelectedPath = Setup.SavePath;
+
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                SavePath = dialog.SelectedPath;
-                PathTextBox.Text = SavePath;
+                Setup.SavePath = dialog.SelectedPath;
+                PathTextBox.Text = Setup.SavePath;
+                Setup.Save(Setup.SavePath);
             }
         }
 
@@ -157,6 +162,8 @@ namespace J_YoutubeDownloader
                 downloadThread.Abort();
             if (progressThread != null)
                 progressThread.Abort();
+
+            DLController.Close();
         }
 
         private void URLTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -182,6 +189,7 @@ namespace J_YoutubeDownloader
             }
             while (++count < 10);
 
+            Mouse.OverrideCursor = Cursors.Wait;
             DownloadProgress.Value = ProgressValue = 0;
             Control.YoutubeInfo youtubeInfo = new Control.YoutubeInfo()
             {
@@ -307,6 +315,12 @@ namespace J_YoutubeDownloader
                 return;
             }
 
+            if (Mouse.OverrideCursor == Cursors.Wait)
+            {
+                MessageBox.Show("잠시 후 시작해주세요.", "경고", MessageBoxButton.OK, MessageBoxImage.Stop);
+                return;
+            }
+
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate
             {
                 Mouse.OverrideCursor = Cursors.Wait;
@@ -353,7 +367,7 @@ namespace J_YoutubeDownloader
                     SelectedQualityNumber,
                     IsVideo,
                     SelectedExtension,
-                    SavePath);
+                    Setup.SavePath);
             });
 
             progressThread.Start();

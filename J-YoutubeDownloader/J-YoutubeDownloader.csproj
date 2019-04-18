@@ -84,6 +84,7 @@
     <Compile Include="ChangedNotificator.cs" />
     <Compile Include="Control\YoutubeInfo.cs" />
     <Compile Include="Control\DLController.cs" />
+    <Compile Include="Database\SetupDB.cs" />
     <Compile Include="Thumbnail\ThumbnailPage.xaml.cs">
       <DependentUpon>ThumbnailPage.xaml</DependentUpon>
     </Compile>

@@ -14,21 +14,22 @@ namespace J_YoutubeDownloader.Control
     public static class DLController
     {
         public static bool IsWorking = false;
+        private static Process youtubeDlProcess = new Process();
 
         public static void GetVersion(ref string version)
         {
             try
             {
-                Process proc = new Process();
-                proc.StartInfo.FileName = "youtube-dl.exe";
-                proc.StartInfo.Arguments = "--version";
-                proc.StartInfo.RedirectStandardInput = true;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.RedirectStandardError = true;
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.CreateNoWindow = true;
-                proc.Start();
-                version = proc.StandardOutput.ReadToEnd();
+                youtubeDlProcess = new Process();
+                youtubeDlProcess.StartInfo.FileName = "youtube-dl.exe";
+                youtubeDlProcess.StartInfo.Arguments = "--version";
+                youtubeDlProcess.StartInfo.RedirectStandardInput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardOutput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardError = true;
+                youtubeDlProcess.StartInfo.UseShellExecute = false;
+                youtubeDlProcess.StartInfo.CreateNoWindow = true;
+                youtubeDlProcess.Start();
+                version = youtubeDlProcess.StandardOutput.ReadToEnd();
             }
             catch
             {
@@ -51,15 +52,15 @@ namespace J_YoutubeDownloader.Control
                     return;
                 }
 
-                Process proc = new Process();
-                proc.StartInfo.FileName = "youtube-dl.exe";
-                proc.StartInfo.Arguments = "--list-format " + youtubeInfo.Url;
-                proc.StartInfo.RedirectStandardInput = true;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.RedirectStandardError = true;
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.CreateNoWindow = true;
-                proc.Start();
+                Process youtubeDlProcess = new Process();
+                youtubeDlProcess.StartInfo.FileName = "youtube-dl.exe";
+                youtubeDlProcess.StartInfo.Arguments = "--list-format " + youtubeInfo.Url;
+                youtubeDlProcess.StartInfo.RedirectStandardInput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardOutput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardError = true;
+                youtubeDlProcess.StartInfo.UseShellExecute = false;
+                youtubeDlProcess.StartInfo.CreateNoWindow = true;
+                youtubeDlProcess.Start();
 
                 int failCount = 0;
                 string stdout;
@@ -67,7 +68,7 @@ namespace J_YoutubeDownloader.Control
                 {
                     try
                     {
-                        stdout = proc.StandardOutput.ReadLine();
+                        stdout = youtubeDlProcess.StandardOutput.ReadLine();
                         if (stdout == null || stdout == "")
                         {
                             failCount++;
@@ -129,15 +130,15 @@ namespace J_YoutubeDownloader.Control
                     };
                 }
 
-                Process proc = new Process();
-                proc.StartInfo.FileName = "youtube-dl.exe";
-                proc.StartInfo.Arguments = "-e " + youtubeInfo.Url;
-                proc.StartInfo.RedirectStandardInput = true;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.RedirectStandardError = true;
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.CreateNoWindow = true;
-                proc.Start();
+                youtubeDlProcess = new Process();
+                youtubeDlProcess.StartInfo.FileName = "youtube-dl.exe";
+                youtubeDlProcess.StartInfo.Arguments = "-e " + youtubeInfo.Url;
+                youtubeDlProcess.StartInfo.RedirectStandardInput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardOutput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardError = true;
+                youtubeDlProcess.StartInfo.UseShellExecute = false;
+                youtubeDlProcess.StartInfo.CreateNoWindow = true;
+                youtubeDlProcess.Start();
 
                 int failCount = 0;
                 bool IsSuccess = true;
@@ -146,7 +147,7 @@ namespace J_YoutubeDownloader.Control
                 {
                     try
                     {
-                        stdout = proc.StandardOutput.ReadToEnd();
+                        stdout = youtubeDlProcess.StandardOutput.ReadToEnd();
                         if (stdout.Contains("ERROR")== true)
                         {
                             IsSuccess = false;
@@ -196,17 +197,17 @@ namespace J_YoutubeDownloader.Control
 
                 Mouse.OverrideCursor = Cursors.Wait;
 
-                Process proc = new Process();
-                proc.StartInfo.FileName = "youtube-dl.exe";
-                proc.StartInfo.Arguments = "-U";
-                proc.StartInfo.RedirectStandardInput = true;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.RedirectStandardError = true;
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.CreateNoWindow = true;
-                proc.Start();
+                youtubeDlProcess = new Process();
+                youtubeDlProcess.StartInfo.FileName = "youtube-dl.exe";
+                youtubeDlProcess.StartInfo.Arguments = "-U";
+                youtubeDlProcess.StartInfo.RedirectStandardInput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardOutput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardError = true;
+                youtubeDlProcess.StartInfo.UseShellExecute = false;
+                youtubeDlProcess.StartInfo.CreateNoWindow = true;
+                youtubeDlProcess.Start();
 
-                string result = proc.StandardOutput.ReadToEnd();
+                string result = youtubeDlProcess.StandardOutput.ReadToEnd();
                 if (result.Contains("up-to-date") == true)
                 {
                     MessageBox.Show("프로그램이 최신버전입니다.");
@@ -242,15 +243,15 @@ namespace J_YoutubeDownloader.Control
                 {
                     string _url = (string)o;
 
-                    Process proc = new Process();
-                    proc.StartInfo.FileName = "youtube-dl.exe";
-                    proc.StartInfo.Arguments = "--skip-download --write-thumbnail " + _url;
-                    proc.StartInfo.RedirectStandardInput = true;
-                    proc.StartInfo.RedirectStandardOutput = true;
-                    proc.StartInfo.RedirectStandardError = true;
-                    proc.StartInfo.UseShellExecute = false;
-                    proc.StartInfo.CreateNoWindow = true;
-                    proc.Start();
+                    Process youtubeDlProcess = new Process();
+                    youtubeDlProcess.StartInfo.FileName = "youtube-dl.exe";
+                    youtubeDlProcess.StartInfo.Arguments = "--skip-download --write-thumbnail " + _url;
+                    youtubeDlProcess.StartInfo.RedirectStandardInput = true;
+                    youtubeDlProcess.StartInfo.RedirectStandardOutput = true;
+                    youtubeDlProcess.StartInfo.RedirectStandardError = true;
+                    youtubeDlProcess.StartInfo.UseShellExecute = false;
+                    youtubeDlProcess.StartInfo.CreateNoWindow = true;
+                    youtubeDlProcess.Start();
 
                     try
                     {
@@ -260,7 +261,7 @@ namespace J_YoutubeDownloader.Control
                         {
                             try
                             {
-                                stdout = proc.StandardOutput.ReadLine();
+                                stdout = youtubeDlProcess.StandardOutput.ReadLine();
                                 if (stdout == null || stdout == "")
                                 {
                                     failCount++;
@@ -308,36 +309,36 @@ namespace J_YoutubeDownloader.Control
                     IsDefalutMode = true;
                 }
 
-                Process proc = new Process();
-                proc.StartInfo.FileName = "youtube-dl.exe";
+                Process youtubeDlProcess = new Process();
+                youtubeDlProcess.StartInfo.FileName = "youtube-dl.exe";
                 if (isVideo)
                 {
-                    proc.StartInfo.Arguments = "--recode-video " + extension +
+                    youtubeDlProcess.StartInfo.Arguments = "--recode-video " + extension +
                         " -o \"" + savePath + "\\\\" + youtubeInfo.TitleName + "." + extension + "\" " +
                         (IsDefalutMode? "": " -f " + quality) +
                         " \"" + youtubeInfo.Url + "\"";
                 }
                 else
                 {
-                    proc.StartInfo.Arguments = "--extract-audio " +
+                    youtubeDlProcess.StartInfo.Arguments = "--extract-audio " +
                         (IsDefalutMode ? "" : " -f " + quality) +
                         " --audio-format " + extension +
                         " --audio-quality 0 " +
                         " -o \"" + savePath + "\\\\" + youtubeInfo.TitleName + "." + extension + "\" " +
                         " \"" + youtubeInfo.Url + "\"";
                 }
-                proc.StartInfo.RedirectStandardInput = true;
-                proc.StartInfo.RedirectStandardOutput = true;
-                proc.StartInfo.RedirectStandardError = true;
-                proc.StartInfo.UseShellExecute = false;
-                proc.StartInfo.CreateNoWindow = true;
-                proc.Start();
+                youtubeDlProcess.StartInfo.RedirectStandardInput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardOutput = true;
+                youtubeDlProcess.StartInfo.RedirectStandardError = true;
+                youtubeDlProcess.StartInfo.UseShellExecute = false;
+                youtubeDlProcess.StartInfo.CreateNoWindow = true;
+                youtubeDlProcess.Start();
 
                 string result, percentString;
                 while (true)
                 {
                     result = percentString = "";
-                    result = proc.StandardOutput.ReadLine();
+                    result = youtubeDlProcess.StandardOutput.ReadLine();
 
                     if (result == null || result.Contains("merged") == true)
                     {
@@ -381,10 +382,6 @@ namespace J_YoutubeDownloader.Control
                     "프로그램을 업데이트하시거나 관리자에게 문의하세요.\n\n" +
                     "Error:\n" +
                     ex.Message);
-                Application.Current.Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Normal, new Action(delegate
-                {
-                    Mouse.OverrideCursor = null;
-                }));
                 return false;
             }
             finally
@@ -392,5 +389,66 @@ namespace J_YoutubeDownloader.Control
                 IsWorking = false;
             }
         }
+
+        public static void Close()
+        {
+            try
+            {
+                youtubeDlProcess.Dispose();
+            }
+            catch { }
+
+            KillAll();
+        }
+
+        public static void KillAll()
+        {
+            try
+            {
+                Process.Start
+            (
+                new ProcessStartInfo
+                {
+                    FileName = "taskkill.exe",
+                    Arguments = "/im youtube-dl.exe /t /f",
+                    RedirectStandardInput = false,
+                    RedirectStandardOutput = false,
+                    RedirectStandardError = false,
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                }
+            );
+
+                Process.Start
+                (
+                    new ProcessStartInfo
+                    {
+                        FileName = "taskkill.exe",
+                        Arguments = "/im ffmpeg.exe /t /f",
+                        RedirectStandardInput = false,
+                        RedirectStandardOutput = false,
+                        RedirectStandardError = false,
+                        UseShellExecute = false,
+                        CreateNoWindow = true,
+                    }
+                );
+
+                Process.Start
+                (
+                    new ProcessStartInfo
+                    {
+                        FileName = "taskkill.exe",
+                        Arguments = "/im ffprobe.exe /t /f",
+                        RedirectStandardInput = false,
+                        RedirectStandardOutput = false,
+                        RedirectStandardError = false,
+                        UseShellExecute = false,
+                        CreateNoWindow = true,
+                    }
+                );
+            }
+            catch { }
+        }
+
     }
 }
