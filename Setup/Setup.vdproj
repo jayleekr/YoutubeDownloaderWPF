@@ -15,7 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_0466D9F2051C48888D3AEDCB1C5D005A"
+        "MsmKey" = "8:_3E6F215E05024B638F5B14CC3DF56F27"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5DDC91A9A32144728C980E09412C6F59"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,7 +33,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_B72B66B90836444081541BA5EAD9DEAC"
+        "MsmKey" = "8:_733F611A35544F25A9D6DDBB4CFD4EF0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -132,7 +138,27 @@
         }
         "File"
         {
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0466D9F2051C48888D3AEDCB1C5D005A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3E6F215E05024B638F5B14CC3DF56F27"
+            {
+            "SourcePath" = "8:..\\J-YoutubeDownloader\\youtube-dl.exe"
+            "TargetName" = "8:youtube-dl.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_89E2D6DB7E344B77A78726DD3A4563DA"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5DDC91A9A32144728C980E09412C6F59"
             {
             "SourcePath" = "8:..\\J-YoutubeDownloader\\ffprobe.exe"
             "TargetName" = "8:ffprobe.exe"
@@ -172,7 +198,7 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B72B66B90836444081541BA5EAD9DEAC"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_733F611A35544F25A9D6DDBB4CFD4EF0"
             {
             "SourcePath" = "8:..\\J-YoutubeDownloader\\ffmpeg.exe"
             "TargetName" = "8:ffmpeg.exe"
@@ -260,7 +286,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:J-YoutubeDownloader"
         "ProductCode" = "8:{08A2300D-FAB8-4B8B-9A1D-09C7D8FB9591}"
-        "PackageCode" = "8:{EB2AA91C-1794-4FCC-8B6A-2281DA423D98}"
+        "PackageCode" = "8:{9060CC38-9561-4A5A-A5FA-D630CC1A119B}"
         "UpgradeCode" = "8:{AD0462E1-FF05-48BD-90A2-67C56522D60C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
